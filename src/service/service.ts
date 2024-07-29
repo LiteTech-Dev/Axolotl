@@ -3,12 +3,11 @@ import { Server } from "./serverType.js";
 // Service logic, singleton
 class Service {
     private static service: Service;
-    private server: Server = new Server();
+    private server: Server;
 
     // Constructor
     private constructor() {
-        this.server = new Server();
-        this.detectServerModules();
+        this.server = this.generateServer();
     }
 
     // Global access point
@@ -20,18 +19,13 @@ class Service {
     }
 
     // Assign values to server.modules
-    private detectServerModules(): void {
-        // Detect MCDR
-        this.server.modules.MCDR = {};
-        // Detect Minecraft
-        this.server.modules.Minecraft = {};
-        // Detect Fabric
-        // Detect Forge
-        // Detect Bukkit
+    private generateServer(): Server {
+        // Placeholder
+        return new Server();
     }
 
     // $ lucy init
-    public initialization(): void {}
+    // public initialization(): void {}
 }
 
 // File related jobs
